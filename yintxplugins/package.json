@@ -1,0 +1,92 @@
+{
+  "name": "yintxplugins",
+  "version": "0.1.3",
+  "private": true,
+  "type": "module",
+  "description": "yintxplugins 合集：把五个本地子插件打进一个聚合包——本地插件安装（官方「添加插件」对话框里的「浏览本地目录 / 选 package.json」+ 按官方流程安装）、插件详情页「打开目录」按钮、预设目录桥接（.agent-presets 扫描与热同步）、会话待办悬浮窗（可拖可缩的 Windows 式浮窗，实时跟当前会话的 todos 与 goal 目标行）、会话拖出小窗（拖右上角胶囊出 60px 即开精简小窗，标题栏 ✎ 可就地重命名会话）。每个子插件各占一行、可单独开关（客户端半随开关联动卸下）；某一行失败只记降级，不回滚整组、不中止 dsh web。",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./shell": {
+      "default": "./lib/shell.js"
+    },
+    "./open-folder": {
+      "default": "./lib/shells/shell.js"
+    },
+    "./open-folder/locale/en.json": "./main/plugin-open-folder/locale/en.json",
+    "./open-folder/locale/zh.json": "./main/plugin-open-folder/locale/zh.json",
+    "./preset-bridge": {
+      "default": "./lib/shells/shell.js"
+    },
+    "./preset-bridge/locale/en.json": "./main/preset-bridge/locale/en.json",
+    "./preset-bridge/locale/zh.json": "./main/preset-bridge/locale/zh.json",
+    "./link-install": {
+      "default": "./lib/shells/shell.js"
+    },
+    "./link-install/locale/en.json": "./main/plugin-link-install/locale/en.json",
+    "./link-install/locale/zh.json": "./main/plugin-link-install/locale/zh.json",
+    "./todo-float": {
+      "default": "./lib/shells/shell.js"
+    },
+    "./todo-float/locale/en.json": "./main/todo-float/locale/en.json",
+    "./todo-float/locale/zh.json": "./main/todo-float/locale/zh.json",
+    "./session-popout": {
+      "default": "./lib/shells/shell.js"
+    },
+    "./session-popout/locale/en.json": "./main/session-popout/locale/en.json",
+    "./session-popout/locale/zh.json": "./main/session-popout/locale/zh.json",
+    "./main/plugin-open-folder": {
+      "default": "./main/plugin-open-folder/index.js"
+    },
+    "./main/plugin-open-folder/client": {
+      "default": "./main/plugin-open-folder/client.js"
+    },
+    "./main/todo-float": {
+      "default": "./main/todo-float/index.js"
+    },
+    "./main/todo-float/client": {
+      "default": "./main/todo-float/client.js"
+    },
+    "./main/session-popout": {
+      "default": "./main/session-popout/index.js"
+    },
+    "./main/session-popout/client": {
+      "default": "./main/session-popout/client.js"
+    },
+    "./main/preset-bridge": {
+      "default": "./main/preset-bridge/index.js"
+    },
+    "./main/plugin-link-install": {
+      "default": "./main/plugin-link-install/index.js"
+    },
+    "./main/plugin-link-install/client": {
+      "default": "./main/plugin-link-install/client.js"
+    },
+    "./rows": {
+      "default": "./lib/rows.json"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "aggregate": "node scripts/aggregate.mjs",
+    "aggregate:check": "node scripts/aggregate.mjs --check",
+    "test": "node test/smoke.mjs"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  }
+}

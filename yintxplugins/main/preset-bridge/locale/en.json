@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Preset folder bridge",
+    "description": "Scans preset files under DSH_HOME/.agent-presets/, registers them as preset declarations with hot sync, and serves the preset card's open-folder route."
+  }
+}

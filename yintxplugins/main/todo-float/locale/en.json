@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session todo float",
+    "description": "A draggable, resizable Windows-like floating window that mirrors the current session's todo list (the official session projection 'todos') and its active goal (the 'goal' projection: objective · phase · round) in real time: title bar with minimize/maximize/close, eight-way resize, double-click to maximize, geometry persisted locally with a host-side fallback."
+  }
+}

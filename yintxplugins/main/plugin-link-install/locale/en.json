@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Local plugin install",
+    "description": "Adds browse-local-folder / pick-package.json to the official Add-plugin dialog and installs local plugin folders into DSH through the official flow."
+  }
+}

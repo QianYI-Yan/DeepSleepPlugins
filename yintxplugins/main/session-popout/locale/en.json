@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Pop out session window",
+    "description": "Pop the current session out into a small window: drag the capsule in the top-right corner out by 60px (or click it / press Alt+Shift+P). On the desktop shell (Tauri/WebView2) window.open is silently ignored, so the default is an in-page inline window (an iframe of the same URL, carrying the same auth token) that can be dragged and resized; browsers can switch to a real popup window. The small window trims the sidebars down to the conversation column by default, and its title bar has a ✎ that renames the current session in place through the official sessions.rename API."
+  }
+}

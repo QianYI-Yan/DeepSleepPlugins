@@ -1,0 +1,55 @@
+{
+  "namespace": "yintx",
+  "title": "yintxplugins 合集",
+  "summary": "把五个本地子插件打进一个合集：本地插件安装（含「浏览本地目录 / 选 package.json」）、插件详情页「打开目录」、预设目录桥接、会话待办悬浮窗、会话拖出小窗。",
+  "self": {
+    "id": "yintx-self"
+  },
+  "plugins": [
+    {
+      "subpath": "open-folder",
+      "plugin": "dsh-plugin-open-folder",
+      "fallback": "./main/plugin-open-folder/index.js",
+      "title": "打开插件目录",
+      "summary": "在官方插件详情页的页头加「打开目录」按钮：点击即用系统文件管理器打开该插件在磁盘上的真实目录，自动还原 link:/file:/node_modules 三种来源。",
+      "client": true,
+      "clientEntry": "./main/plugin-open-folder/client.js"
+    },
+    {
+      "subpath": "preset-bridge",
+      "plugin": "dsh-preset-bridge",
+      "fallback": "./main/preset-bridge/index.js",
+      "title": "预设目录桥接",
+      "summary": "扫描 DSH_HOME/.agent-presets/ 下的 preset.yml / agent.cordis.yml，注册成预设声明并热同步；并给官方预设卡片注入「打开目录」按钮（后端路由 /preset-folder/open）。",
+      "client": true,
+      "clientEntry": "./main/preset-bridge/client.js"
+    },
+    {
+      "subpath": "link-install",
+      "plugin": "dsh-plugin-link-install",
+      "fallback": "./main/plugin-link-install/index.js",
+      "title": "本地插件安装",
+      "summary": "给官方「添加插件」对话框补上「浏览本地目录 / 选 package.json」；勾选后先把目录整份复制到 DSH_HOME/plugins/<profile>/<name>，再把路径交回官方 installBundle（官方写依赖、官方跑 pnpm）。",
+      "client": true,
+      "clientEntry": "./main/plugin-link-install/client.js"
+    },
+    {
+      "subpath": "todo-float",
+      "plugin": "dsh-plugin-todo-float",
+      "fallback": "./main/todo-float/index.js",
+      "title": "会话待办悬浮窗",
+      "summary": "客户端悬浮窗实时显示当前会话的待办（官方会话投影 todos）与当前活跃目标（goal 投影：目标 · 阶段 · 轮次）：Windows 窗口式标题栏与三按钮，可拖动、可八向缩放、可最大化/收起、双击标题栏最大化；几何本地优先、宿主半兜底持久化。",
+      "client": true,
+      "clientEntry": "./main/todo-float/client.js"
+    },
+    {
+      "subpath": "session-popout",
+      "plugin": "dsh-plugin-session-popout",
+      "fallback": "./main/session-popout/index.js",
+      "title": "会话拖出小窗",
+      "summary": "把当前会话开成独立小窗：按住视口右上角胶囊拖出 60px 松手（或点它 / Alt+Shift+P）；小窗是同一地址的弹窗、带同一份 token，默认精简侧栏只留会话列，并给「回到主窗口 / 关闭」浮条；小窗标题栏带 ✎，可就地改当前会话标题（走官方 sessions.rename）。",
+      "client": true,
+      "clientEntry": "./main/session-popout/client.js"
+    }
+  ]
+}

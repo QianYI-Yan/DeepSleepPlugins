@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Open plugin folder",
+    "description": "Adds an \"Open folder\" button to the official plugin detail page header that opens the plugin's real directory in the system file manager (resolving link:/file:/node_modules installs)."
+  }
+}

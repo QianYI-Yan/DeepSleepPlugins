@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "会话拖出小窗",
+    "description": "把当前会话拖出来开成小窗：按住视口右上角的胶囊拖出 60px 松手（或点它 / Alt+Shift+P）。桌面端（Tauri/WebView2）window.open 会静默失效，所以默认在界面里开一个可拖可缩的内嵌小窗（iframe 加载同一地址、带同一份 token）；浏览器里可切成真独立窗口。小窗默认精简掉侧栏只留会话列；标题栏带 ✎，可就地重命名当前会话（走官方 sessions.rename）。"
+  }
+}
